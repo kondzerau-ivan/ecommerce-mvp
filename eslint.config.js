@@ -1,4 +1,4 @@
-import eslintPluginPrettier from 'eslint-plugin-prettier';
+import stylistic from '@stylistic/eslint-plugin';
 
 export default [
   {
@@ -9,10 +9,11 @@ export default [
       sourceType: 'module',
     },
     plugins: {
-      eslintPluginPrettier,
+      '@stylistic': stylistic
     },
     rules: {
-      semi: ['warn', 'always'],
+      '@stylistic/semi': ['error', 'always'],
+      'indent': ['error', 2],
     },
   },
 ];
