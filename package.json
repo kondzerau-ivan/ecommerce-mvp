@@ -12,11 +12,6 @@
     "deploy": "gh-pages -d dist",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^4.0.1",
     "daisyui": "^5.0.0-beta.6",
