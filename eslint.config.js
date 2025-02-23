@@ -13,7 +13,7 @@ export default [
     },
     rules: {
       '@stylistic/semi': ['error', 'always'],
-      'indent': ['error', 2],
+      '@stylistic/indent': ['error', 2],
     },
   },
 ];
