@@ -1,8 +1,8 @@
 import './style.css';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const copyrightDate = document.querySelector("#copyright .date");
+  const copyrightDate = document.querySelector(".js-copyright-date") as HTMLElement;
   if (copyrightDate) {
-    copyrightDate.innerHTML = new Date().getFullYear().toString();
+    copyrightDate.innerText = new Date().getFullYear().toString();
   }
 });
