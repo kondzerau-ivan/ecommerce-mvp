@@ -2,3 +2,7 @@
 @plugin "daisyui" {
     themes: dark --default, light --prefersdark;
 }
+
+.login:disabled .login-inner {
+    @apply loading loading-spinner text-primary;
+}

@@ -2,11 +2,20 @@ import './style.css';
 import { getCustomerToken } from './api';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const loginButton = document.querySelector(".js-login-button") as HTMLButtonElement;
+  const loginButton = document.querySelector(".js-login") as HTMLButtonElement;
+  const accountButton = document.querySelector(".account") as HTMLAnchorElement;
+
   if (loginButton) {
-    loginButton.addEventListener("click", async () => {
-      const token = await getCustomerToken();
-      console.log(token);
+    loginButton.addEventListener("click", () => {
+      loginButton.disabled = true;
+
+      setTimeout(async () => {
+        const token = await getCustomerToken();
+        console.log(token);
+        loginButton.classList.add('hidden');
+        loginButton.disabled = false;
+        accountButton.classList.remove('hidden');
+      }, 1000);
     });
   }
 

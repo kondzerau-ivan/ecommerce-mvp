@@ -15,7 +15,6 @@ export const getCustomerToken = async ({username = "emilys", password = "emilysp
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),
-      credentials: 'include'
     });
 
     if (!response.ok) {
@@ -27,4 +26,4 @@ export const getCustomerToken = async ({username = "emilys", password = "emilysp
     console.error('Error fetching customer token:', error);
     throw error; // Re-throw the error after logging it
   }
-}
+};

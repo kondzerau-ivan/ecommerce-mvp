@@ -16,7 +16,8 @@
                     <a class="btn btn-ghost text-xl">Brand</a>
                 </div>
                 <div class="flex-none">
-                    <div class="account dropdown dropdown-end">
+                    <button class="js-login login btn"><span class="login-inner">Login</span></button>
+                    <div class="account dropdown dropdown-end hidden">
                         <div tabindex="0"
                              role="button"
                              class="btn btn-ghost btn-circle avatar">
@@ -27,8 +28,8 @@
                         </div>
                         <ul tabindex="0"
                             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 p-2 shadow">
-                            <li class="js-login-button"><a>Login</a></li>
-                            <li><a>Create</a></li>
+                            <li><a href="#">Account</a></li>
+                            <li><button class="logout">Logout</button></li>
                         </ul>
                     </div>
                     <div class="minicart dropdown dropdown-end">
@@ -121,7 +122,8 @@
         <div class="container mx-auto">
             <aside>
                 <p class="copyright"
-                   onload="">Copyright © <span class="copyright-date js-copyright-date"></span> - All right reserved by Brand</p>
+                   onload="">Copyright © <span class="copyright-date js-copyright-date"></span> - All right reserved by
+                    Brand</p>
             </aside>
         </div>
     </footer>
