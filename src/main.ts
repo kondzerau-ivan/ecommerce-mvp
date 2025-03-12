@@ -1,23 +1,11 @@
+import { login } from './functions';
 import './style.css';
-import { getCustomerToken } from './api';
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginButton = document.querySelector(".js-login") as HTMLButtonElement;
   const accountButton = document.querySelector(".account") as HTMLAnchorElement;
 
-  if (loginButton) {
-    loginButton.addEventListener("click", () => {
-      loginButton.disabled = true;
-
-      setTimeout(async () => {
-        const token = await getCustomerToken();
-        console.log(token);
-        loginButton.classList.add('hidden');
-        loginButton.disabled = false;
-        accountButton.classList.remove('hidden');
-      }, 1000);
-    });
-  }
+  if (loginButton && accountButton) login(loginButton, accountButton);
 
   // Update the copyright date
   const copyrightDate = document.querySelector(".js-copyright-date") as HTMLElement;
