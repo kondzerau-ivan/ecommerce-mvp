@@ -1,4 +1,4 @@
-import { handleCustomerLogin } from './functions';
+import { handleCustomerLogin } from './auth';
 import './style.css';
 
 document.addEventListener("DOMContentLoaded", () => {

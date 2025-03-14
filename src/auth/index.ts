@@ -1,4 +1,4 @@
-import { getCustomerData } from './api';
+import { getCustomerData } from '../api';
 
 const setCustomerAccessToken = (token: string): void => {
   document.cookie = `customerAccessToken=${token}; path=/; samesite=strict`;
@@ -10,7 +10,7 @@ const setCustomerAuthenticatedView = (loginButton: HTMLButtonElement, accountBut
   accountButton.classList.remove('hidden');
 };
 
-export const handleCustomerLogin = async (loginButton: HTMLButtonElement, accountButton: HTMLAnchorElement): void => {
+export const handleCustomerLogin = async (loginButton: HTMLButtonElement, accountButton: HTMLAnchorElement): Promise<void> => {
   loginButton.disabled = true;
   const data = await getCustomerData();
   const token = data.accessToken;
