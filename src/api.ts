@@ -6,10 +6,10 @@ interface GetCustomerTokenParams {
 }
 
 interface GetCustomerTokenResponse {
-  token: string;
+  accessToken: string;
 }
 
-export const getCustomerToken = async ({username = "emilys", password = "emilyspass"}: GetCustomerTokenParams = {}): Promise<GetCustomerTokenResponse> => {
+export const getCustomerData = async ({username = "emilys", password = "emilyspass"}: GetCustomerTokenParams = {}): Promise<GetCustomerTokenResponse> => {
   try {
     const response = await fetch(LOGIN_URL, {
       method: 'POST',
