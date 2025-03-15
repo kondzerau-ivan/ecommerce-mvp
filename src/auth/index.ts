@@ -10,10 +10,21 @@ const setCustomerAuthenticatedView = (loginButton: HTMLButtonElement, accountBut
   accountButton.classList.remove('hidden');
 };
 
-export const handleCustomerLogin = async (loginButton: HTMLButtonElement, accountButton: HTMLAnchorElement): Promise<void> => {
+const setCustomerLoginEvent = (data: Object): void => {
+  const event = new CustomEvent('login', {
+    detail: {
+      isLogin: true,
+      user: data
+    }
+  });
+
+  window.dispatchEvent(event);
+}
+
+export const handleLoginButtonClick = async (loginButton: HTMLButtonElement, accountButton: HTMLAnchorElement): Promise<void> => {
   loginButton.disabled = true;
   const data = await getCustomerData();
-  const token = data.accessToken;
-  setCustomerAccessToken(token);
+  setCustomerLoginEvent(data);
+  setCustomerAccessToken(data.accessToken);
   setCustomerAuthenticatedView(loginButton, accountButton);
 };

@@ -1,4 +1,4 @@
-import { handleCustomerLogin } from './auth';
+import { handleLoginButtonClick } from './auth';
 import './style.css';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const accountButton = document.querySelector(".account") as HTMLAnchorElement;
 
   if (loginButton && accountButton)
-    loginButton.addEventListener('click', () => handleCustomerLogin(loginButton, accountButton));
+    loginButton.addEventListener('click', () => handleLoginButtonClick(loginButton, accountButton));
 
   // Update the copyright date
   const copyrightDate = document.querySelector(".js-copyright-date") as HTMLElement;
