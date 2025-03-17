@@ -4,12 +4,6 @@ const setCustomerAccessToken = (token: string): void => {
   document.cookie = `customerAccessToken=${token}; path=/; samesite=strict`;
 };
 
-const setCustomerAuthenticatedView = (loginButton: HTMLButtonElement, accountButton: HTMLAnchorElement) => {
-  loginButton.classList.add('hidden');
-  loginButton.disabled = false;
-  accountButton.classList.remove('hidden');
-};
-
 const setCustomerLoginEvent = (data: Object): void => {
   const event = new CustomEvent('login', {
     detail: {
@@ -23,8 +17,16 @@ const setCustomerLoginEvent = (data: Object): void => {
 
 export const handleLoginButtonClick = async (loginButton: HTMLButtonElement, accountButton: HTMLAnchorElement): Promise<void> => {
   loginButton.disabled = true;
+
   const data = await getCustomerData();
+
   setCustomerLoginEvent(data);
   setCustomerAccessToken(data.accessToken);
-  setCustomerAuthenticatedView(loginButton, accountButton);
+
+  loginButton.classList.add('hidden');
+  loginButton.disabled = false;
+  accountButton.classList.remove('hidden');
+
+  const customerImage: HTMLImageElement | null = document.querySelector('.js-customer-image');
+  if (customerImage) customerImage.setAttribute('src', data.image);
 };

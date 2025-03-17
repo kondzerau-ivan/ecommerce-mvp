@@ -7,6 +7,7 @@ interface GetCustomerTokenParams {
 
 interface GetCustomerTokenResponse {
   accessToken: string;
+  image: string;
 }
 
 export const getCustomerData = async ({username = "emilys", password = "emilyspass"}: GetCustomerTokenParams = {}): Promise<GetCustomerTokenResponse> => {
