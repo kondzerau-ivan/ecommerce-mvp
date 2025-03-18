@@ -3,6 +3,6 @@
     themes: dark --default, light --prefersdark;
 }
 
-.login:disabled .login-inner {
+.loading .login-inner {
     @apply loading loading-spinner text-primary;
 }
