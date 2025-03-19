@@ -6,9 +6,8 @@ const setCustomerAccessToken = (token: string): void => {
 };
 
 const setCustomerLoginEvent = (data: object): void => {
-  const event = new CustomEvent('login', {
+  const event = new CustomEvent('login:before', {
     detail: {
-      isLogin: true,
       bubbles: true,
       cancelable: true,
       user: data
