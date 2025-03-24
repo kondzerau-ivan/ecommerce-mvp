@@ -1,6 +1,7 @@
 import './style.css';
 import { handleLoginButtonClick, handleLogoutButtonClick } from './auth';
 import { loginButton, accountButton, logoutButton } from './selectors';
+import { getProductsData } from './api';
 
 document.addEventListener("DOMContentLoaded", () => {
   if (loginButton && accountButton)
@@ -14,4 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (copyrightDate) {
     copyrightDate.innerText = new Date().getFullYear().toString();
   }
+
+  const products = getProductsData();
+  console.log(products);
 });

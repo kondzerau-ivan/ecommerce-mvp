@@ -3,3 +3,4 @@ export const logoutButton = document.querySelector('.js-logout') as HTMLButtonEl
 export const accountButton = document.querySelector('.account') as HTMLAnchorElement;
 export const customerImage = document.querySelector('.js-customer-image') as HTMLImageElement;
 export const customerGreeting = document.querySelector('.js-greeting') as HTMLSpanElement;
+export const productsGrid = document.querySelector('.js-products') as HTMLDivElement;
