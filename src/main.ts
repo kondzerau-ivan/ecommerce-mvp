@@ -3,7 +3,7 @@ import { handleLoginButtonClick, handleLogoutButtonClick } from './auth';
 import { loginButton, accountButton, logoutButton } from './selectors';
 import { getProductsData } from './api';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   if (loginButton && accountButton)
     loginButton.addEventListener('click', handleLoginButtonClick);
 
@@ -16,6 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     copyrightDate.innerText = new Date().getFullYear().toString();
   }
 
-  const products = getProductsData();
+  const products = await getProductsData();
   console.log(products);
 });
