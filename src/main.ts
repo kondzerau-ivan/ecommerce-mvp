@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (logoutButton) logoutButton.addEventListener('click', handleLogoutButtonClick);
 
+    loginButton.addEventListener('click', handleLoginButtonClick);
+
+  if (logoutButton) logoutButton.addEventListener('click', handleLogoutButtonClick);
+
 
   // Update the copyright date
   const copyrightDate = document.querySelector('.js-copyright-date') as HTMLElement;
